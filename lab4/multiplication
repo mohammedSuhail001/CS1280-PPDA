@@ -1,0 +1,5 @@
+y = int(input("Enter a number: "))
+
+print(f"Multiplication Table of {y}:")
+for i in range(1, 11):
+    print(f"{y} x {i} = {y * i}")
