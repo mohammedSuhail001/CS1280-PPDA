@@ -1,0 +1,26 @@
+def word_count(sentence):
+    # Convert to lowercase to avoid case-sensitive differences
+    sentence = sentence.lower()
+    
+    # Split the sentence into words
+    words = sentence.split()
+    
+    # Count the number of words
+    total_words = len(words)
+    
+    # Create a dictionary to store word frequencies
+    word_freq = {}
+    
+    for word in words:
+        # Remove punctuation from words (optional improvement)
+        word = ''.join(char for char in word if char.isalnum())
+        if word:  # Ensure the word is not empty
+            word_freq[word] = word_freq.get(word, 0) + 1
+    
+    return total_words, word_freq
+
+# Example usage
+sentence = "This is a test. This test is only a test."
+total_words, word_freq = word_count(sentence)
+print("Total words:", total_words)
+print("Word frequencies:", word_freq)
