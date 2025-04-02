@@ -1,0 +1,67 @@
+def celsius_to_fahrenheit(celsius):
+  """Converts Celsius to Fahrenheit."""
+  return (celsius * 9/5) + 32
+
+def celsius_to_kelvin(celsius):
+  """Converts Celsius to Kelvin."""
+  return celsius + 273.15
+
+def fahrenheit_to_celsius(fahrenheit):
+  """Converts Fahrenheit to Celsius."""
+  return (fahrenheit - 32) * 5/9
+
+def fahrenheit_to_kelvin(fahrenheit):
+  """Converts Fahrenheit to Kelvin."""
+  return (fahrenheit - 32) * 5/9 + 273.15
+
+def kelvin_to_celsius(kelvin):
+  """Converts Kelvin to Celsius."""
+  return kelvin - 273.15
+
+def kelvin_to_fahrenheit(kelvin):
+  """Converts Kelvin to Fahrenheit."""
+  return (kelvin - 273.15) * 9/5 + 32
+
+def temperature_converter():
+  """Converts temperature between Celsius, Fahrenheit, and Kelvin."""
+
+  while True:
+    print("\nTemperature Converter")
+    print("1. Celsius")
+    print("2. Fahrenheit")
+    print("3. Kelvin")
+    print("4. Exit")
+
+    try:
+      from_unit = int(input("Enter the unit you want to convert from (1, 2, or 3): "))
+
+      if from_unit == 4:
+        print("Exiting...")
+        break
+
+      if from_unit not in [1, 2, 3]:
+        print("Invalid input. Please enter 1, 2, or 3.")
+        continue
+
+      temperature = float(input("Enter the temperature: "))
+
+      if from_unit == 1:  # Celsius
+        fahrenheit = celsius_to_fahrenheit(temperature)
+        kelvin = celsius_to_kelvin(temperature)
+        print(f"{temperature} Celsius is equal to {fahrenheit} Fahrenheit and {kelvin} Kelvin.")
+
+      elif from_unit == 2:  # Fahrenheit
+        celsius = fahrenheit_to_celsius(temperature)
+        kelvin = fahrenheit_to_kelvin(temperature)
+        print(f"{temperature} Fahrenheit is equal to {celsius} Celsius and {kelvin} Kelvin.")
+
+      elif from_unit == 3:  # Kelvin
+        celsius = kelvin_to_celsius(temperature)
+        fahrenheit = kelvin_to_fahrenheit(temperature)
+        print(f"{temperature} Kelvin is equal to {celsius} Celsius and {fahrenheit} Fahrenheit.")
+
+    except ValueError:
+      print("Invalid input. Please enter a number.")
+
+if __name__ == "__main__":
+  temperature_converter()
