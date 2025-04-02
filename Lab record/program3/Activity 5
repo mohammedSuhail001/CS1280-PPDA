@@ -1,0 +1,48 @@
+class ListOperations:
+    def __init__(self):
+        self.lst = []
+
+    def insert(self, element):
+        self.lst.append(element)
+        print(f"Inserted {element} into the list.")
+
+    def delete(self, element):
+        if element in self.lst:
+            self.lst.remove(element)
+            print(f"Deleted {element} from the list.")
+        else:
+            print(f"{element} not found in the list.")
+
+    def find(self, element):
+        if element in self.lst:
+            print(f"{element} found at index {self.lst.index(element)}.")
+        else:
+            print(f"{element} not found in the list.")
+
+    def sort_list(self):
+        self.lst.sort()
+        print("List sorted:", self.lst)
+
+    def reverse_list(self):
+        self.lst.reverse()
+        print("List reversed:", self.lst)
+
+    def display(self):
+        print("Current List:", self.lst)
+
+
+# Example usage
+if __name__ == "__main__":
+    obj = ListOperations()
+
+    obj.insert(10)
+    obj.insert(5)
+    obj.insert(20)
+    obj.display()
+
+    obj.find(5)
+    obj.delete(10)
+    obj.display()
+
+    obj.sort_list()
+    obj.reverse_list()
