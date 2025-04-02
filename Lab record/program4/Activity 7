@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Load the CSV file
+file_path = "experience_data.csv"  # Update with the actual file path
+df = pd.read_csv(file_path)
+
+# 1. Display the last 3 rows
+print("Last 3 Rows:")
+print(df.tail(3))
+
+# 2. Display DataFrame description and information
+print("\nDataFrame Description:")
+print(df.describe())
+
+print("\nDataFrame Information:")
+print(df.info())
+
+# 3. Display column names
+print("\nColumn Names:")
+print(df.columns.tolist())
